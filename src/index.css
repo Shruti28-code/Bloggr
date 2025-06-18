@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  font-family: "Times New Roman", Times, serif;
+  background-image: linear-gradient(
+    to bottom,
+    #7dd3fc,
+    rgba(255, 255, 255, 0.4),
+    #7dd3fc
+  );
+}
