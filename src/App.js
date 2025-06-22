@@ -58,7 +58,7 @@ import { login, logout } from "./store/authSlice";
 import './App.css';
 import { Footer, Header } from './components/index2';
 import { Outlet } from 'react-router-dom';
-import Logo from './components/Logo'; // adjust path if needed
+import Logo from './components/Logo';
 
 function App() {
   const [loading, setLoading] = useState(true);

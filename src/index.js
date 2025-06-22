@@ -82,28 +82,24 @@ const router = createBrowserRouter([
       {
         path: "/privacy",
         element: (
-          <AuthLayout authentication>
-            {" "}
-            <Privacy />
-          </AuthLayout>
+
+          <Privacy />
+
         ),
       },
       {
         path: "/terms",
         element: (
-          <AuthLayout authentication>
-            {" "}
-            <Terms />
-          </AuthLayout>
+
+          <Terms />
+
         ),
       },
       {
         path: "/help",
         element: (
-          <AuthLayout authentication>
-            {" "}
-            <Help />
-          </AuthLayout >
+          < Help />
+
         ),
       },
     ],

@@ -1,5 +1,5 @@
 import conf from "../conf/conf";
-import { Client, Databases, Storage, Query, ID } from "appwrite"; //i have delete Account from here
+import { Client, Databases, Storage, Query, ID, } from "appwrite"; //i have delete Account from here
 import { Permission, Role, } from "appwrite";
 export class Service {
     // you can give name to class as database service or storage service as well 
@@ -13,9 +13,13 @@ export class Service {
             .setProject(conf.appwriteProjectId)
         this.databases = new Databases(this.client);
         this.bucket = new Storage(this.client);
+
     }
-    async createPost({ title, slug, content, featuredImage, status, userId }) {
+    async createPost({ title, slug, content, featuredImage, status, userId, authorName }) {
+
         try {
+
+
             const response = await this.databases.createDocument(
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId,
@@ -27,6 +31,7 @@ export class Service {
                     featuredImage,
                     status,
                     userId,
+                    authorName
                 },
                 [
                     Permission.read(Role.any()),               // ✅ Allow anyone to read
@@ -147,7 +152,7 @@ export class Service {
             return this.bucket.getFileView(
                 conf.appwriteBucketId,
                 fileId
-            ); // ✅ return the URL string
+            );
         } catch (error) {
             console.log("Appwrite service :: getFilePreview :: error", error);
             return false;
